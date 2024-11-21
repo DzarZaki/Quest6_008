@@ -135,7 +135,7 @@ fun RencanaStudyView(
                             selected = pilihankelas == data,
                             onClick = { pilihankelas = data }
                         )
-
+                            Text(data)
                         }
                     }
                 }

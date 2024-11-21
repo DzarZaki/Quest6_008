@@ -13,6 +13,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material3.Icon
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -24,10 +25,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.data.EmptyGroup.data
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.pertemuanke8.R
 import com.example.pertemuanke8.data.MataKuliah
+import com.example.pertemuanke8.data.RuangKelas
 import com.example.pertemuanke8.model.Mahasiswa
 import com.example.pertemuanke8.ui.widget.DynamicSelectedField
 
@@ -125,7 +128,16 @@ fun RencanaStudyView(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ){
+                    RuangKelas.kelas.forEach { data ->
+                        Row (
+                            verticalAlignment = Alignment.CenterVertically){
+                        RadioButton(
+                            selected = pilihankelas == data,
+                            onClick = { pilihankelas = data }
+                        )
 
+                        }
+                    }
                 }
             }
         }

@@ -10,4 +10,8 @@ class RencanaStudyViewModel : viewModel() {
     fun setMataKuliah(mkPilihan: String) {
         _krsState.update { stateMK -> stateMK.copy(namaMK = mkPilihan)}
     }
+
+    fun setKelas(kelasPilihan: String) {
+        _krsState.update { statekelas -> statekelas.copy(namaMK = kelasPilihan)}
+    }
 }

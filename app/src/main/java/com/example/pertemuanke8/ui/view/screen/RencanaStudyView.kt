@@ -159,7 +159,9 @@ fun RencanaStudyView(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ){
-                    
+                    Button(onClick = { onBackButtonClicked() }) {
+                        Text(text = "Kembali")
+                    }
                 }
             }
         }

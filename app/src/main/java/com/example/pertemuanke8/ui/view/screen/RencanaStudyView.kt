@@ -26,7 +26,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.data.EmptyGroup.data
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.pertemuanke8.R
@@ -145,6 +144,11 @@ fun RencanaStudyView(
                 Spacer(modifier = Modifier.padding(8.dp))
                 Text(text = "Klausul Persetujuan Mahasiswa", fontWeight = FontWeight.Bold)
                 Row (verticalAlignment = Alignment.CenterVertically){
+                    Checkbox(
+                        checked = checked,
+                        onCheckedChange = { checked = it },
+                        enabled = chosenDropdown.isNotBlank()&& pilihankelas.isNotBlank()
+                    )
 
                 }
             }

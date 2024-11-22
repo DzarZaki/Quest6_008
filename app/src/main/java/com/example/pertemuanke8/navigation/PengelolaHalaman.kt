@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.example.pertemuanke8.model.Mahasiswa
+import com.example.pertemuanke8.ui.view.screen.RencanaStudyView
 import com.example.pertemuanke8.ui.view.screen.SplashView
 import com.example.pertemuanke8.ui.view.viewmodel.MahasiswaViewModel
 import com.example.pertemuanke8.ui.view.viewmodel.RencanaStudyViewModel
@@ -43,6 +44,13 @@ fun MahasiswaApp(
                 onBackButtonClicked = {
                     navController.popBackStack()
                 }
+            )
+        }
+        composable(route = Halaman.Matakuliah.name) {
+            RencanaStudyView(
+                mahasiswa = mahasiswaUiState,
+                onSubmitButtonClicked = {KrsViewModel.saveDataKRS(it)},
+                onBackButtonClicked = {navController.popBackStack()}
             )
         }
     }

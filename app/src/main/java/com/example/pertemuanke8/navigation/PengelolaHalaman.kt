@@ -1,5 +1,6 @@
 package com.example.pertemuanke8.navigation
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.example.pertemuanke8.model.Mahasiswa
@@ -19,4 +20,11 @@ fun MahasiswaApp(
     mahasiswaViewModel: MahasiswaViewModel = viewModel(),
     KrsViewModel: RencanaStudyViewModel = viewModel(),
     navController: NavHostController = rememberNavController()
-){}
+){
+    val mahasiswaUiState = mahasiswaViewModel.mahasiswaUiState.collectAsState().value
+    Navhost(
+        navController= navController,
+        startDestination = Halaman.Splash.name,
+        modifier = modifier.padding()
+    ){}
+}

@@ -35,6 +35,16 @@ fun MahasiswaApp(
                 )
             })
         }
+        composable(route = Halaman.Mahasiswa.name) {
+            MahasiswaFormView(
+                onSubmitButtonClicked = {
+                    mahasiswaViewModel.navigate(Halaman.matakuliah.name)
+                },
+                onBackButtonClicked = {
+                    navController.popBackStack()
+                }
+            )
+        }
     }
 }
 

@@ -32,6 +32,7 @@ fun MahasiswaApp(
     navController: NavHostController = rememberNavController()
 ){
     val mahasiswaUiState = mahasiswaViewModel.mhsStateUi.collectAsState().value
+    val rencanastudiUiState = RencanaStudyViewModel.krsStateUi.collectAsState().value
     NavHost(
         navController= navController,
         startDestination = Halaman.Splash.name,
@@ -62,7 +63,18 @@ fun MahasiswaApp(
                 onBackButtonClicked = {navController.popBackStack()}
             )
         }
+        composable(route = Halaman.Tampil.name){
+            DetailMahasiswaView(
+                dataMhs = mahasiswaUiState,
+                DataKRS = rencanastudiUiState,
+                onClickButton = {
+                    navController.popBackStack()
+                }
+            )
+        }
     }
 }
+
+
 
 
